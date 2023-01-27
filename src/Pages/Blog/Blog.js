@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
+import AddBlog from "./AddBlog";
 
 const GET_BLOGS = gql`
   query GetBlogs {
@@ -23,7 +24,20 @@ const Blog = () => {
     <>
       <div className="bg-base-200 p-10">
         <div className="flex justify-end pr-12">
-          <button className="btn btn-primary">Add Blog</button>
+          <label htmlFor="my-modal-3" className="btn btn-primary">Add Blog</label>
+
+          <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+          <div className="modal">
+            <div className="modal-box relative">
+              <label
+                htmlFor="my-modal-3"
+                className="btn btn-primary btn-sm btn-circle absolute right-5 top-5"
+              >
+                ✕
+              </label>
+              <AddBlog/>
+            </div>
+          </div>
         </div>
         <h1 className="text-4xl font-bold text-center">Blogs</h1>
       </div>
