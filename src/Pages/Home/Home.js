@@ -20,9 +20,9 @@ const Home = () => {
   if (error) return <p>Error :(</p>;
 
   return (
-    <>
-        <h1>
-          Blogs
+    <div className='p-10 bg-base-200'>
+        <h1 className='text-2xl font-bold mb-6'>
+          Blogs:
         </h1>
         {data.blog.map((blog) => (
           <div key={blog.id}>
@@ -34,7 +34,7 @@ const Home = () => {
             </p>
           </div>
         ))}      
-    </>
+    </div>
   );
 };
 
