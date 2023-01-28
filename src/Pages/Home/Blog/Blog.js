@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import AddBlog from "./AddBlog";
 import { FaBlog } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const GET_BLOGS = gql`
@@ -53,7 +54,11 @@ const Blog = () => {
                 <div className="flex justify-start items-center bg-base-200 w-fit p-5 rounded-full">
                  <FaBlog className="h-8 w-8" />
                 </div>
-                <h2 className="card-title">{blog.category_name}</h2>
+                <h2 className="card-title">
+                  <Link to={`/blog/${blog.id}`}>
+                  {blog.category_name}
+                  </Link>
+                </h2>
                 <p>{blog.category_description}</p>  
               </div>
             </div>
